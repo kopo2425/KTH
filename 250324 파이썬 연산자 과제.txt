@@ -6,9 +6,9 @@ A = 10 * 4 * (1/2)
 B = 9 * 5 + (1/2)
 print(A == B)
 
-KOR = 95
+KOR = 95 #띄어쓰기 유의하자
 MAT = 88
 ENG = 90
 AVG = 92
 
-print(AVG*4-KOR-MAT-ENG)
+print(AVG * 4 - KOR - MAT - ENG)
