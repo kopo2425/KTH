@@ -16,8 +16,14 @@ try:
             print('알 수 없는 오류입니다.') 
             
             break;
-        
+            
         elif coin == 0:
+              
+            print('잔액이 부족 합니다')
+
+            break;  
+            
+        elif coin < 100:
             
             print('잔액이 부족 합니다')
 
