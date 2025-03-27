@@ -4,16 +4,12 @@ try:
 
     if n >= 10:
         print('9이하의 정수를 넣으십시오.')
-    
     elif n < 1:
         print('1이상의 정수를 넣으십시오.')
-        
     else: #else에 이걸 넣어서 n이 11이상의 값이 나오지않게 방지   
         
         m = 2
-    
         i = 1
-    
         b = 0
 
         while i <= n: # 변수가 동적이면 while 구문 사용하자   
@@ -30,13 +26,10 @@ try:
             print()
         
             i = j + 1 
-        
             m -= 1
-        
             b += 1
         
             if m < 0: break;
                 
-
 except ValueError:
         print('1이상 9이하의 정수만 넣으십시오.')
