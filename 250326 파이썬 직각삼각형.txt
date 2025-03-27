@@ -2,10 +2,11 @@
 #n을 입력받고, 좌측 직각 삼각형
 #마지막 줄 n 개
 
-n=int(input())
+n = int(input())
 
-for i in range(1,n+1):
-    print('*' * i) #문자열에 곱셈이 가능하구나!, 자바에선 안됨
+for i in range(1, n+1):
+    print(' * ' * i) #문자열에 곱셈이 가능하구나!, 자바에선 안됨
+    
 print('직각 삼각형')    
 
 if n < 0:
