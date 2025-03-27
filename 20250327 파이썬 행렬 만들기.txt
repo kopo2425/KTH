@@ -1,0 +1,20 @@
+#행렬
+#if else 하고 다시 if else 해서 필터링하자 필터링 다 하고 본 코딩 진행!!! 
+
+try: 
+    m = int(input('행의 숫자를 넣으시오'))
+
+    if m < 1:        
+        print('1이상의 정수를 넣으십시오.')
+    else:
+        n = int(input('열의 숫자를 넣으시오'))
+        if n < 1:
+            print('1이상의 정수를 넣으십시오.')
+        else:    
+            for i in range (1, m+1):
+                for j in range (i, n+i):
+                    print(j, end = "")
+                print()
+
+except ValueError:
+        print('1이상 9이하의 정수만 넣으십시오.')
