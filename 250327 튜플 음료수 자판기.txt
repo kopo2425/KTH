@@ -1,9 +1,8 @@
 # 튜플 음료수 자판기
 
-print('음료목록 1.오렌지주스(100원), 2.커피(200원), 3.콜라(300원)')
-
 drinkname = ['오렌지주스', '커피', '콜라']
 drinkprice = [100, 200, 300]
+print('음료목록 1.' + drinkname[0] + '(' + str(drinkprice[0]) + '원), 2.' + drinkname[1] + '(' + str(drinkprice[1]) + '원), 3.' + drinkname[2] + '(' + str(drinkprice[2]) + '원)')
 
 try:
     coin = int(input('동전을 넣으세요.'))
@@ -34,7 +33,6 @@ try:
                 print('잔액이 부족합니다.')
                 coin = 0
                 break;    
-
         else: #없는 번호
             print('없는 메뉴입니다. 다시 입력해 주세요.')
             break;
