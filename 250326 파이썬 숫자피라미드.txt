@@ -18,7 +18,7 @@ try:
 
         while i <= n: # 변수가 동적이면 while 구문 사용하자   
         
-            a=' ' * m
+            a= ' ' * m
             print(a, end = "") #개행 막기위해선 end 사용
         
             for j in range (i, i + 2 * b + 1): #j의 초기값은 시작인 i가 된다!
