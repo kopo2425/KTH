@@ -3,11 +3,9 @@ try:
     n = int(input('숫자를 넣으시오'))
 
     if n >= 10:
-        
         print('9이하의 정수를 넣으십시오.')
     
     elif n < 1:
-        
         print('1이상의 정수를 넣으십시오.')
         
     else: #else에 이걸 넣어서 n이 11이상의 값이 나오지않게 방지   
@@ -18,21 +16,15 @@ try:
     
         b = 0
 
-
         while i <= n: # 변수가 동적이면 while 구문 사용하자   
         
-        
             a=' ' * m
-        
             print(a, end = "") #개행 막기위해선 end 사용
         
             for j in range (i, i + 2 * b + 1): #j의 초기값은 시작인 i가 된다!
-            
                 print(str(j), end = "")
-            
-                       
-                if n == j: #n이 줄 끝까지 돌지 않도록 
                 
+                if n == j: #n이 줄 끝까지 돌지 않도록 
                     break;
             
             print()
