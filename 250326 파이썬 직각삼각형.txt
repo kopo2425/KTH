@@ -5,8 +5,8 @@
 try:
     n = int(input())
 
-    if n < 0:
-        print('음수는 안됩니다!')
+    if n <= 0:
+        print('음수와 0은 안됩니다!')
     else:
         for i in range(1, n+1):
             print('*' * i) #문자열에 곱셈이 가능하구나!, 자바에선 안됨
