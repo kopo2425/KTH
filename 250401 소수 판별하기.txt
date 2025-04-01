@@ -1,0 +1,22 @@
+def check_prime_num(x):
+    if x < 2:
+        return False
+    for i in range(2, x):
+        if x % i == 0:
+            #x가 i로 나누어 떨어지면 실행하기
+            return False
+    return True #모두 나눠보고 진위 여부를 판별해야 하므로 for 구문 밖으로
+   
+try:
+    number = int(input('판별할 자연수를 입력하세요:'))
+
+    if check_prime_num(number):
+        print(f"{number}은 소수입니다!")
+
+    else:
+        print(f"{number}은 소수가 아닙니다!") 
+        #f"..." → f-string을 사용
+        #{number} → number 변수의 값을 문자열에 삽입
+
+except ValueError:
+    print('2이상의 정수를 넣으십시오.')
