@@ -1,34 +1,71 @@
-#1. 우수 초콜릿 분석
+# 1. 우수 초콜릿 분석
 
-import numpy as np
-data = np.loadtxt('chocolate_rating.csv', delimiter = ',')
-print('차원:', data.ndim)
-print('모양:', data.shape)
-print('원소 수:', data.size)
-print(data)
+# numpy 라이브러리를 np라는 별칭으로 불러옴
+import numpy as np  
 
-#2.
+# 'chocolate_rating.csv' 파일을 불러와서 numpy 배열로 저장 (구분자는 ',')
+data = np.loadtxt('chocolate_rating.csv', delimiter = ',')  
 
-ratings_mean = data[:, 3].mean( )
-print(ratings_mean)
+# 데이터의 차원(몇 차원 배열인지) 출력
+print('차원:', data.ndim)  
 
-#3.
+# 데이터의 모양(행, 열의 개수) 출력
+print('모양:', data.shape)  
 
-high_level = data[data[:, 3] >= 4]
-high_id = high_level[:, 0].astype(np.int64)
-print('우수 초콜릿 수:', high_id.size)
-print(high_id)
+# 데이터의 전체 원소 개수 출력
+print('원소 수:', data.size)  
 
-#4.
+# 전체 데이터 출력
+print(data)  
 
-high_kakao = high_level[:, 2]
-unique_values, value_counts = np.unique(high_kakao, return_counts=True)
-print('카카오 함유량:', unique_values)
-print('함유량별 빈도수:', value_counts)
 
-#5.
+# 2. 초콜릿 평점의 평균 계산
 
-max_index = np.argmax(value_counts)
-print(unique_values[max_index])
+# 4번째 열(인덱스 3, 평점 데이터)의 평균을 계산
+ratings_mean = data[:, 3].mean( )  
+
+# 평균 평점 출력
+print(ratings_mean)  
+
+
+# 3. 우수 초콜릿(평점 4.0 이상) 필터링
+
+# 평점이 4.0 이상인 데이터만 필터링하여 저장
+high_level = data[data[:, 3] >= 4]  
+
+# 필터링된 데이터에서 초콜릿의 ID(첫 번째 열)를 정수형(int64)으로 변환하여 저장
+high_id = high_level[:, 0].astype(np.int64)  
+
+# 우수 초콜릿(평점 4.0 이상) 개수 출력
+print('우수 초콜릿 수:', high_id.size)  
+
+# 우수 초콜릿의 ID 출력
+print(high_id)  
+
+
+# 4. 우수 초콜릿의 카카오 함유량 분석
+
+# 우수 초콜릿(high_level)에서 카카오 함유량(세 번째 열) 데이터를 추출
+high_kakao = high_level[:, 2]  
+
+# 카카오 함유량별로 고유값(중복 제거된 값)과 각 값의 빈도수를 계산
+unique_values, value_counts = np.unique(high_kakao, return_counts=True)  
+
+# 고유한 카카오 함유량 값 출력
+print('카카오 함유량:', unique_values)  
+
+# 각 카카오 함유량의 빈도수 출력
+print('함유량별 빈도수:', value_counts)  
+
+
+# 5. 가장 많은 우수 초콜릿이 포함된 카카오 함유량 찾기
+
+# 가장 많은 빈도를 가진 카카오 함유량의 인덱스를 찾음
+max_index = np.argmax(value_counts)  
+
+# 해당 인덱스의 카카오 함유량 값을 출력
+print(unique_values[max_index])  
+
+# 가장 많이 등장한 카카오 함유량과 해당 개수를 출력
 print('우수 초콜릿', high_id.size, '가지 중', value_counts[max_index], \
       '가지의 카카오 함유량이', unique_values[max_index] * 100, '%입니다.')
