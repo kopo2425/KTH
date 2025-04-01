@@ -1,6 +1,6 @@
 import csv
 
-f = open('weather.csv', 'w', newline ='') #쓰기모드, 자동개행방지, f에 저장
+f = open('weather.csv', 'w', newline ='') #쓰기모드, 자동개행방지, 다음에 빈 줄을 없앤다, f에 저장
 wr = csv.writer(f) #CSV 파일 작성
 
 wr.writerow(['날짜', '요일', '날씨', '최저기온', '최고기온', '강수량']) #첫번째 줄 제목
