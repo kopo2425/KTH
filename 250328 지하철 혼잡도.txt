@@ -1,41 +1,64 @@
-from google.colab import files
+# Google Colab에서 파일을 업로드할 수 있도록 files 모듈을 가져옴
+from google.colab import files  
 
-f = files.upload( )
-
-
-import openpyxl
-
-wb = openpyxl.Workbook( )
-ws = wb.active
+# 사용자가 파일을 업로드하도록 요청 (업로드된 파일은 Colab 환경에 저장됨)
+f = files.upload()  
 
 
+# openpyxl 라이브러리를 가져와 엑셀 파일을 생성 및 수정할 수 있도록 함
+import openpyxl  
 
-import csv
+# 새로운 엑셀 파일(Workbook)을 생성
+wb = openpyxl.Workbook()  
 
-with open('data1.csv', encoding = 'cp949') as f:
-    reader = csv.reader(f)
-    for row in reader:
-        ws.append(row)
-
-
-ws2 = wb.create_sheet('Sheet2')
-
-with open('data2.csv', encoding = 'cp949') as f:
-    reader = csv.reader(f)
-    for row in reader:
-        ws2.append(row)
+# 현재 활성화된 기본 시트(첫 번째 시트)를 가져옴
+ws = wb.active  
 
 
-ws3 = wb.create_sheet('Sheet2')
+# csv 라이브러리를 가져와 CSV 파일을 읽을 수 있도록 함
+import csv  
 
-with open('data3.csv', encoding = 'cp949') as f:
-    reader = csv.reader(f)
-    for row in reader:
-        ws3.append(row)
+# 'data1.csv' 파일을 'cp949' 인코딩 방식으로 읽기 모드로 염
+with open('data1.csv', encoding='cp949') as f:  
+    # csv.reader를 사용하여 CSV 파일의 데이터를 한 줄씩 읽음
+    reader = csv.reader(f)  
+    # CSV 파일의 각 행(row)을 엑셀 시트(ws)에 추가
+    for row in reader:  
+        ws.append(row)  
 
 
-ws.title = '경기도 의정부시_의정부경전철 혼잡도'
-ws2.title = '대전교통공사_열차 혼잡도 분석'
-ws3.title = '서울특별시_지하철 혼잡도 정보'
+# 새로운 시트(Sheet2)를 생성하고 ws2 변수에 저장
+ws2 = wb.create_sheet('Sheet2')  
 
-wb.save('traffic.xlsx')
+# 'data2.csv' 파일을 'cp949' 인코딩 방식으로 읽기 모드로 염
+with open('data2.csv', encoding='cp949') as f:  
+    # csv.reader를 사용하여 CSV 파일의 데이터를 한 줄씩 읽음
+    reader = csv.reader(f)  
+    # CSV 파일의 각 행(row)을 새 시트(ws2)에 추가
+    for row in reader:  
+        ws2.append(row)  
+
+
+# 또 다른 새로운 시트(Sheet2)를 생성 (오류 발생 가능: 같은 이름의 시트가 두 개 생성됨)
+ws3 = wb.create_sheet('Sheet2')  
+
+# 'data3.csv' 파일을 'cp949' 인코딩 방식으로 읽기 모드로 염
+with open('data3.csv', encoding='cp949') as f:  
+    # csv.reader를 사용하여 CSV 파일의 데이터를 한 줄씩 읽음
+    reader = csv.reader(f)  
+    # CSV 파일의 각 행(row)을 새 시트(ws3)에 추가
+    for row in reader:  
+        ws3.append(row)  
+
+
+# 첫 번째 시트(ws)의 이름을 '경기도 의정부시_의정부경전철 혼잡도'로 변경
+ws.title = '경기도 의정부시_의정부경전철 혼잡도'  
+
+# 두 번째 시트(ws2)의 이름을 '대전교통공사_열차 혼잡도 분석'으로 변경
+ws2.title = '대전교통공사_열차 혼잡도 분석'  
+
+# 세 번째 시트(ws3)의 이름을 '서울특별시_지하철 혼잡도 정보'로 변경
+ws3.title = '서울특별시_지하철 혼잡도 정보'  
+
+# 모든 데이터를 포함한 엑셀 파일을 'traffic.xlsx'라는 이름으로 저장
+wb.save('traffic.xlsx')  
