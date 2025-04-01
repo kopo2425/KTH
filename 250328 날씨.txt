@@ -1,11 +1,11 @@
 import csv
 
-f = open('weather.csv', 'w', newline ='')
-wr = csv.writer(f)
+f = open('weather.csv', 'w', newline ='') #쓰기모드, 자동개행방지, f에 저장
+wr = csv.writer(f) #CSV 파일 작성
 
-wr.writerow(['날짜', '요일', '날씨', '최저기온', '최고기온', '강수량'])
-wr.writerow(['20230101', '월', '맑음', -4.3, -3.8, 0])
+wr.writerow(['날짜', '요일', '날씨', '최저기온', '최고기온', '강수량']) #첫번째 줄 제목
+wr.writerow(['20230101', '월', '맑음', -4.3, -3.8, 0]) #두번째
 wr.writerow(['20230102', '화', '맑음', -7.4, -0.4, 0])
 wr.writerow(['20230103', '수', '맑음', -9.0, -0.6, 0])
 
-f.close( )
+f.close( ) #파일닫고 저장
