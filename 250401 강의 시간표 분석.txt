@@ -1,4 +1,4 @@
-#강의 시간표 분석
+#강의 시간표 분석, 등호 사이 띄어쓰기 꼭 하자
 
 col_names = ['과목번호', '과목명', '강의실', '시간수']
 list1 = list([['C1', '인공지능개론', 'R1', 3], 
@@ -10,13 +10,13 @@ list1 = list([['C1', '인공지능개론', 'R1', 3],
             ])
 
 import pandas as pd
-df = pd.DataFrame(list1, columns=col_names)
-df.to_csv('./timetable.csv', header=True, index=False, #.은 현재 디렉토리 ..은 부모 디렉토리 그냥 /는 절대 디렉토리(C:\) ~은 홈 디렉토리
-          encoding='utf-8')
+df = pd.DataFrame(list1, columns = col_names) #열 이름을 이걸로 한다
+df.to_csv('./timetable.csv', header = True, index = False, #.은 현재 디렉토리 ..은 부모 디렉토리 그냥 /는 절대 디렉토리(C:\) ~은 홈 디렉토리
+          encoding = 'utf-8')
 df2 = pd.read_csv('./timetable.csv', sep = ',')
 df2['교수'] = ['김예희', '오정현', '인세훈', '이새봄', '배유진', '이가원']
 df2
 
-max_hour = df2.groupby(by=['강의실'],
-    as_index=False)['시간수'].max( )
+max_hour = df2.groupby(by = ['강의실'],
+    as_index = False)['시간수'].max( )
 max_hour
