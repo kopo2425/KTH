@@ -49,7 +49,7 @@ print(high_id)
 high_kakao = high_level[:, 2]  
 
 # 카카오 함유량별로 고유값(중복 제거된 값)과 각 값의 빈도수를 계산
-unique_values, value_counts = np.unique(high_kakao, return_counts=True)  
+unique_values, value_counts = np.unique(high_kakao, return_counts = True)  
 
 # 고유한 카카오 함유량 값 출력
 print('카카오 함유량:', unique_values)  
