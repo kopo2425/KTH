@@ -1,12 +1,20 @@
 #include <stdio.h>
 
-void main()
+int main(void)
 {   
-    int i, j, k;
+    int i, j, k, x;
     
-    int a = 2; //띄어쓰기
+    scanf("%d", &x);
     
-    for(i = 1; i < 5; i++) {
+    if(x < 1) {
+        printf("1이상의 정수를 입력하세요");
+        
+        return -1;
+    }
+    
+    int a = x - 2; //띄어쓰기
+    
+    for(i = 1; i <= x; i++) {
         
         for(j = a; j >= 0; j--) {
             printf(" ");
