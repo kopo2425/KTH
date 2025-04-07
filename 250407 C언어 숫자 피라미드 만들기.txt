@@ -7,8 +7,7 @@ int main(void)
     scanf("%d", &x);
     
     if(x < 1) {
-        printf("1이상의 정수를 입력하세요");
-        
+        printf("1이상의 정수를 입력하세요");   
         return -1;
     }
     
@@ -25,7 +24,6 @@ int main(void)
         for(k = 1; k <= i; k++) {
             printf("%d ", k);
         }
-        
         printf("\n");
     }
 }
