@@ -7,10 +7,10 @@ int main()
     int num[6]; //크기가 6인 배열 선언, 인덱스의 6 아님
     int i, j; // 반복문 변수 미리 선언
     
-    srand(time(NULL));
+    srand(time(NULL)); //시간을 초단위로 주고 매번 수를 다르게 해줌
     
     for (i = 0; i < 6;) {
-        int newNum = (int)(rand() % 45) +1; //printf("%d\n", num[i]); 하면 뽑힌 수 랜덤배열
+        int newNum = (int)(rand() % 45) +1; //printf("%d\n", num[i]); 하면 뽑힌 수 랜덤배열 , rand는  똑같은 번호, srand는 매번 다르게됨
         int Duplication = 0; //중복 여부 체크 변수
         
         for (j = 0; j < i; j++) {
