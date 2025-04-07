@@ -43,7 +43,7 @@ int main()
                 
                 if(left >= right) //교차되면 반복 종료
                     break;
-                swap(&Hoare[left], &Hoare[right]); //왼쪽이 오른쪽 보다 같거나 크면 값을 교환환   
+                swap(&Hoare[left], &Hoare[right]); //왼쪽이 오른쪽 보다 같거나 크면 값을 교환   
             }
             
             quickSort(Hoare, low, right); //피벗보다 작거나 같은 구간, right가 피벗임(호어)
