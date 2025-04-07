@@ -39,7 +39,7 @@ int main()
                 
                 for(; Hoare[++left] < pivot; ); //왼쪽부터 피벗보다 크거나 같은 값 나올때까지 
                 
-                for(; Hoare[--right] > pivot; ); //오른쪽부터 피벗보다 작거나 같은 값 나올때까지지
+                for(; Hoare[--right] > pivot; ); //오른쪽부터 피벗보다 작거나 같은 값 나올때까지
                 
                 if(left >= right) //교차되면 반복 종료
                     break;
