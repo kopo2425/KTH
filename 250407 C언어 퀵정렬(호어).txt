@@ -31,7 +31,7 @@ int main()
     
     void quickSort(int Hoare[], int low, int high) { //인덱스 처음인 0이 low, 인덱스 마지막 high
         if(low < high) {
-            int pivot = Hoare[low];
+            int pivot = Hoare[low]; //호어정렬은 피벗이 가장 왼쪽이다
             int left = low -1; //1을 먼저 더해가며 비교할려고 해서 이렇게 설정
             int right = high + 1; //1을 먼저 뺴가며 비교할려고 해서 이렇게 설정
             
