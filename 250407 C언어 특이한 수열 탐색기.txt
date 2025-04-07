@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include <math.h> //n승 표현하기 위함
 
 int main()
 {
     int M, N, i, x;
     char k;
     int Speciality;
+    int Number;
     
     if (scanf("%d%c", &M, &k) != 2 || k != '\n') {
         printf("소수점이 없는 양수인 정수를 입력하세요.\n");
@@ -31,6 +31,7 @@ int main()
         printf("뒤에 입력할 수 보다 작은 정수를 입력하세요.\n");
         return -1;
     } else {
+        
         for(i = M; i <= N; i++) {
             
             Speciality = 0;
@@ -39,10 +40,17 @@ int main()
                 Speciality = 1;
             }
             
-            for(x = 1; x<= 10; x++) { //int는 부호없는 정수면 2^32까지 가능하므로로
-                if(i % (int)pow(10, x) == 7) { //pow는 double이므로 정수 형변환!
+            Number = i;
+            
+            while(Number > 0) {
+                
+                if(Number % 10 == 7) {
                     Speciality = 1;
+                    break;
+                } else {
+                    Number = Number / 10;
                 }
+                
             }
             
             if(i % 5 == 0 && Speciality != 1) {
