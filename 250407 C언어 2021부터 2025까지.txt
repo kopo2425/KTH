@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+void main()
+{ 
+    int a = 202000;
+    
+    int b = 202600;
+    
+    for (int i = a / 100; i < b / 100; i++) {
+        for(int j = 1; j <= 12; j++) {
+            int result = i * 100 + j;
+            if(result >= 202302 && result <= 202305) {
+                continue;
+            }
+            if(result > 202504) {
+                break;
+            }
+            printf("%d\n", result);
+        }
+    }
+}
