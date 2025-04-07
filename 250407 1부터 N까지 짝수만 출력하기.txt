@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    int a, n;
+    
+    scanf("%d", &n);
+    
+    if(n <= 0) {
+        printf("1이상인 정수를 입력하시오");
+    }
+    
+    a = 0;
+    
+    while(a < n) {
+        a = a + 1;
+        if(a % 2 == 0) {
+            printf("%d ", a);    
+        }
+    }
+    printf("\n");
+    
+}
