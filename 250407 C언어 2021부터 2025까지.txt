@@ -3,7 +3,6 @@
 void main()
 { 
     int a = 202000;
-    
     int b = 202600;
     
     for (int i = a / 100; i < b / 100; i++) {
