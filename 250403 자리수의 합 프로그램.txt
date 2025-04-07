@@ -29,9 +29,7 @@ int main()
     if (x < 100) {
         printf("100 이상의 세자리 양수인 정수를 넣으십시오.\n");
         return -1;
-    }
-
-    else if (x >= 1000) {
+    } else if (x >= 1000) {
         printf("100 이상의 세자리 양수인 정수를 넣으십시오.\n");
         return -1;
     }
