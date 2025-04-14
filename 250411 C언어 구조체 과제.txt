@@ -41,7 +41,6 @@ void inputGroup(struct groups *g, int id) {  // g는 struct groups 구조체 하
     printf("이름을 입력하시오: ");
     scanf("%s", (*g).b); // 이름 입력
 
-
     int result;
     while (TRUE) {
         printf("나이를 입력하시오: ");
