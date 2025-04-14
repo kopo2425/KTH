@@ -27,13 +27,9 @@ void inputUnion(union groups *g) {
         //즉 우리가 제어할수없는 어떤 주소값이 반환된다
         //sscanf는 문자열을 받아서 원하는 값을 반환함
         printf("%d : 값, %p : 주소값\n", g->intVal, &g->intVal);
-    }
-    // 2. 실수인지 검사
-    else if (sscanf(buffer, "%f", &g->floatVal) == TRUE) {
+    } else if (sscanf(buffer, "%f", &g->floatVal) == TRUE) { //2. 실수인지 검사
         printf("%f : 값, %p : 주소값\n", g->floatVal, &g->floatVal);
-    }
-    // 3. 문자 한 글자인지 검사
-    else if (sscanf(buffer, " %c", &g->charVal) == TRUE && strlen(buffer) <= 2) {
+    } else if (sscanf(buffer, " %c", &g->charVal) == TRUE && strlen(buffer) <= 2) { // 3. 문자 한 글자인지 검사
         //strlen은 buffer의 문자열 길이를 나타내므로, 여기선 한 문자의 여부를 본다
         //한 문자 a라고 한다면 a와 그 뒤의 NULL값이 생기므로 2이하로 해야된다
         printf("%c : 값, %p : 주소값\n", g->charVal, &g->charVal);
@@ -44,8 +40,8 @@ void inputUnion(union groups *g) {
 }
 
 int main() {
-    
     union groups g;
     inputUnion(&g);
+
     return 0;
 }
