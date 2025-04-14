@@ -82,7 +82,6 @@ void inputGroup(struct groups *g, int id) {  // g는 struct groups 구조체 하
             break; //M과 F 조건문은 묶어줘야한다, 안그러면, F만 만족해도 break가 되어버림
         } else {
             printf("M 또는 F만 입력하세요!\n");
-            
             while (getchar() != '\n');
         }
     }
@@ -104,6 +103,7 @@ void inputGroup(struct groups *g, int id) {  // g는 struct groups 구조체 하
             break;
         } else {
             printf("잘못된 입력입니다. 다시 선택하세요.\n");
+            while (getchar() != '\n'); //안 넣으면 문자입력시 반복오류남
         }
     }
 }    
