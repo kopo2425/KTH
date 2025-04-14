@@ -26,13 +26,13 @@ void inputUnion(union groups *g) {
         //strchr(문자열, '찾을 문자') 찾을 문자가 처음 등장하는 위치의 포인터를 반환함
         //즉 우리가 제어할수없는 어떤 주소값이 반환된다
         //sscanf는 문자열을 받아서 원하는 값을 반환함
-        printf("%d : 값, %p : 주소값\n", g->intVal, &g->intVal);
+        printf("값 : %d, 주소값 : %p \n", g->intVal, &g->intVal);
     } else if (sscanf(buffer, "%f", &g->floatVal) == TRUE) { //2. 실수인지 검사
-        printf("%f : 값, %p : 주소값\n", g->floatVal, &g->floatVal);
+        printf("값 : %f, 주소값 : %p \n", g->floatVal, &g->floatVal);
     } else if (sscanf(buffer, " %c", &g->charVal) == TRUE && strlen(buffer) <= 2) { // 3. 문자 한 글자인지 검사
         //strlen은 buffer의 문자열 길이를 나타내므로, 여기선 한 문자의 여부를 본다
         //한 문자 a라고 한다면 a와 그 뒤의 NULL값이 생기므로 2이하로 해야된다
-        printf("%c : 값, %p : 주소값\n", g->charVal, &g->charVal);
+        printf("값 : %c, 주소값 : %p \n", g->charVal, &g->charVal);
     }
     else {
         printf("잘못된 입력값입니다.\n");
