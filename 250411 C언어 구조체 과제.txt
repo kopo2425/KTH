@@ -41,11 +41,36 @@ void inputGroup(struct groups *g, int id) {  // g는 struct groups 구조체 하
     printf("이름을 입력하시오: ");
     scanf("%s", (*g).b); // 이름 입력
 
-    printf("나이를 입력하시오: ");
-    scanf("%d", &(*g).c); // 나이 입력
 
-    printf("성별을 입력하시오 (한 글자): ");
-    scanf(" %c", &(*g).d); // 성별 입력 (앞에 공백!) //안그러면 엔터쳤을때 개행문자가 여기에 입력됨
+    int result;
+    while (TRUE) {
+        printf("나이를 입력하시오: ");
+        result = scanf("%d", &(*g).c); //입력값의 갯수를 반환, 따라서 1 또는 0
+
+        if (result == TRUE && (*g).c > 0 && (*g).c < 100) {
+            break; // 입력 성공, 루프 탈출
+        } else {
+            printf("1 ~ 99 사이의 숫자만 입력하세요!\n");
+
+            // 입력 버퍼 비우기
+            while (getchar() != '\n');
+        }
+    }
+    
+    int result2;
+    while (TRUE) {
+        printf("성별을 입력하시오 (M 또는 F): ");
+        result2 = scanf(" %c", &(*g).d); // 성별 입력 (앞에 공백!) 
+        //안그러면 엔터쳤을때 개행문자가 여기에 입력됨
+        
+        if (result2 == TRUE && (*g).d == 'M' || (*g).d == 'F') {
+            break;
+        } else {
+            printf("M 또는 F만 입력하세요!\n");
+            
+            while (getchar() != '\n');
+        }
+    }
 
     printf("취미를 입력하시오: ");
     scanf("%s", (*g).e); // 취미 입력
