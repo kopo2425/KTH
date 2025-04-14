@@ -33,8 +33,7 @@ void inputUnion(union groups *g) {
         //strlen은 buffer의 문자열 길이를 나타내므로, 여기선 한 문자의 여부를 본다
         //한 문자 a라고 한다면 a와 그 뒤의 NULL값이 생기므로 2이하로 해야된다
         printf("값 : %c, 주소값 : %p \n", g->charVal, &g->charVal);
-    }
-    else {
+    } else {
         printf("잘못된 입력값입니다.\n");
     }
 }
