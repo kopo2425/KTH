@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    enum member {NONE, SEDAN, SUV, TRUCK, VAN};
+    enum member car;
+    char buffer[100];
+    char *carName [] = {"NONE", "SEDAN", "SUV", "TRUCK", "VAN"}; 
+    
+    printf("원하는 차량의 종류를 1 ~ 4로 설정했습니다. 입력하세요.\n");
+    fgets(buffer, sizeof(buffer), stdin);
+    if (sscanf(buffer, "%d", &car) == 1 && (strlen(buffer)) <= 2 && (car == 1 || car == 2 
+        || car == 3 || car == 4)) {
+        printf("%s\n", carName[car]);
+    } else {
+        printf("잘못된 입력입니다, 1 ~ 4의 정수를 입력하세요.\n");
+    }
+    
+    return 0;
+}
