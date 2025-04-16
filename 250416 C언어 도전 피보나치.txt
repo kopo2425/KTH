@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+int Fib(int n) {
+    if (n == 1 || n == 2) { 
+        return 1;
+    } else {
+        return Fib(n - 1) + Fib(n - 2);
+    }
+}
+
+int num;
+int total;
+int oddCount;
+int evenCount;
+
+void inputNumber() {
+    scanf("%d", &num);
+}
+
+void Pivo(int n) {
+    if (n == 0) //n이 0이면 그냥 출력 종료
+        return;    
+        
+    Pivo(n - 1); //재귀로 이전 항들 출력                   
+    printf("%d ", Fib(n));
+}
+
+void printTotal() {
+    for (int i = 1; i <= num; i++) {
+        total += Fib(i);
+    }
+    printf("\n합: %d\n", total);
+}
+
+void printOddEvenCount() {
+    int oddCount = 0;
+    int evenCount = 0;
+    
+    for (int i = 1; i <= num; i++) {
+        if (Fib(i) % 2 == 1) {
+            oddCount++;
+        } else if (Fib(i) % 2 == 0) {
+            evenCount++;
+        }    
+    }
+    
+    printf("홀/짝: %d/%d\n", oddCount, evenCount);
+}
+
+int main(void) {
+    inputNumber();
+    Pivo(num);
+    printTotal();
+    printOddEvenCount();
+    
+    return 0;
+}
